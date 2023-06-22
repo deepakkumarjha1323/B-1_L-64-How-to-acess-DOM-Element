@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How to acess js DOM Element </title>
+    </head>
+    <body>
+        <form onsubmit="submitValue()">
+            <h3>Simple Interest</h3>
+            <input type="text" name="num1" placeholder="Enter Principle Value"  id="n1"/>
+            <input type="text" name="num1" placeholder="Enter Rate Value"  class="n2"/>
+            <input type="text" name="num1" placeholder="Enter Time Value"  data-d1="n3"/>
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <script>
+            // 1. Function defination 
+            function submitValue(){
+                let n1 = document.getElementById('n1').value;
+                var n2 = document.querySelector('.n2').value;
+                let n3 = document.querySelector('[data-d1="n3"]').value;
+                
+                // Result/formula
+                // Simple Interest
+                let r1 = parseInt(n1) * parseInt(n2) * parseInt(n3);
+
+                alert('Simple Interest Value --> '+r1);
+                // HTML Web Storage
+                localStorage.setItem('result', r1); // we are passing two actual argument are string
+            }
+
+           
+        </script>
+    </body>
+</html>
